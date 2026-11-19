@@ -16,9 +16,9 @@ Vanilla JS + Leaflet + OpenStreetMap — בלי build, בלי תלויות, **ב
 
 | שירות | תפקיד | עלות |
 |---|---|---|
-| Leaflet + CARTO basemaps (נתוני OSM) | מפה, סיכה, עיגול רדיוס | חינם |
+| Leaflet + Esri World Street Map | מפה, סיכה, עיגול רדיוס | חינם, בלי מפתח |
 
-> למה לא אריחי tile.openstreetmap.org ישירות? שרתים אלה חוסמים הטמעה באפליקציות לפי מדיניות השימוש שלהם (403 "Access blocked"). אריחי CARTO מבוססים על אותם נתוני OSM ומיועדים להטמעה.
+> למה לא ספקי האריחים המובנים מאליהם? tile.openstreetmap.org חוסם הטמעה באפליקציות (403 "Access blocked"), ו-CARTO מטביע סימן מים "API KEY REQUIRED" בלי מפתח בתשלום/רישום. אריחי Esri World Street Map מאפשרים הטמעה חינמית עם קרדיט, בלי מפתח (סדר הצירים ב-URL שלהם הוא `z/y/x`). נתוני המקומות עצמם עדיין מ-OpenStreetMap דרך Overpass.
 | Overpass API | שליפת קפה/מסעדות/ברים ברדיוס | חינם |
 | Nominatim | גיאוקודינג + השלמת כתובות | חינם |
 

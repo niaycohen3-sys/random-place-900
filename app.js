@@ -10,9 +10,10 @@ let lastPickId = null;
 let cached = []; // תוצאות אחרונות לאותו מרכז+קטגוריות, כדי ש"נסה שוב" יהיה מיידי
 
 const map = L.map("map").setView([center.lat, center.lon], 15);
-// אריחי מפה: CARTO (מבוסס OSM) — שרתי tile.openstreetmap.org חוסמים הטמעה באפליקציות (403, Tile Usage Policy)
-L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
-  maxZoom: 20, subdomains: "abcd", attribution: "© OpenStreetMap contributors © CARTO",
+// אריחי מפה: Esri World Street Map — tile.openstreetmap.org חוסם הטמעה (403), ו-CARTO דורש API key (סימן מים על האריחים).
+// Esri מאפשר הטמעה בלי מפתח, עם קרדיט. שים לב: סדר הצירים ב-URL הוא z/y/x.
+L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", {
+  maxZoom: 19, attribution: "Tiles © Esri — Source: Esri, OpenStreetMap contributors",
 }).addTo(map);
 
 const centerMarker = L.marker([center.lat, center.lon], { draggable: true }).addTo(map);
