@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>מקום רנדומלי — 900 מטר ממך</title>
+<meta name="description" content="מגריל עבורך מקום אחד בלבד — קפה, מסעדה או בר — ברדיוס 900 מטר. בלי המלצות, בלי רשימות, רק רנדומליות." />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+<header class="top">
+  <h1>🎲 מקום רנדומלי</h1>
+  <p class="sub">מקום <b>אחד</b>, בהגרלה מלאה, ברדיוס <b>900 מטר</b> — קפה, מסעדה או בר. בלי “מומלצים”, בלי טופ 5.</p>
+</header>
+
+<main class="wrap">
+  <section class="card">
+    <h2>1. איפה לחפש?</h2>
+    <div class="row">
+      <button id="geoBtn" type="button">📍 המיקום שלי</button>
+      <div class="search">
+        <input id="addrInput" type="text" placeholder="או הקלד כתובת / מקום…" autocomplete="off" />
+        <div id="suggestions" class="suggestions" hidden></div>
+      </div>
+    </div>
+    <p class="hint">אפשר גם ללחוץ / לגרור את הסיכה על המפה — זה מרכז החיפוש.</p>
+    <div id="map"></div>
+    <p id="centerLabel" class="hint"></p>
+
+    <h2>2. קטגוריות</h2>
+    <div class="chips" id="catChips">
+      <label><input type="checkbox" value="cafe" checked /> ☕ קפה</label>
+      <label><input type="checkbox" value="restaurant" checked /> 🍽️ מסעדה</label>
+      <label><input type="checkbox" value="bar" checked /> 🍺 בר</label>
+    </div>
+
+    <label class="switch">
+      <input id="ratingToggle" type="checkbox" />
+      <span>סנן לדירוג 3+ כוכבים בלבד (אופציונלי, כבוי כברירת מחדל)</span>
+    </label>
+    <p class="hint">הערה כנה: במקור החינמי (OpenStreetMap) דירוג קיים רק לחלק קטן מהמקומות, לכן כשהמתג דלוק יישארו רק מקומות עם דירוג ידוע של 3+. לדירוגים מלאים צריך Google Places API — ראה README.</p>
+
+    <button id="rollBtn" class="roll" type="button">🎲 הגרל מקום</button>
+    <p id="status" class="status" role="status"></p>
+  </section>
+
+  <section id="result" class="card result" hidden>
+    <p class="badge" id="rCat"></p>
+    <h2 id="rName"></h2>
+    <p id="rAddr"></p>
+    <p id="rMeta"></p>
+    <p id="rHours"></p>
+    <div class="row">
+      <a id="gmapsBtn" target="_blank" rel="noopener">🗺️ ניווט ב-Google Maps</a>
+      <a id="wazeBtn" target="_blank" rel="noopener">🚗 ניווט ב-Waze</a>
+    </div>
+    <button id="againBtn" type="button">🔁 נסה שוב / רנדום נוסף</button>
+  </section>
+</main>
+
+<footer class="hint center">מפה ונתונים: © OpenStreetMap contributors · חיפוש מקומות: Overpass API · חיפוש כתובות: Nominatim — כולם חינמיים, בלי API Key.</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>
