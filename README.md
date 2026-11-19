@@ -16,7 +16,9 @@ Vanilla JS + Leaflet + OpenStreetMap — בלי build, בלי תלויות, **ב
 
 | שירות | תפקיד | עלות |
 |---|---|---|
-| Leaflet + OpenStreetMap tiles | מפה, סיכה, עיגול רדיוס | חינם |
+| Leaflet + CARTO basemaps (נתוני OSM) | מפה, סיכה, עיגול רדיוס | חינם |
+
+> למה לא אריחי tile.openstreetmap.org ישירות? שרתים אלה חוסמים הטמעה באפליקציות לפי מדיניות השימוש שלהם (403 "Access blocked"). אריחי CARTO מבוססים על אותם נתוני OSM ומיועדים להטמעה.
 | Overpass API | שליפת קפה/מסעדות/ברים ברדיוס | חינם |
 | Nominatim | גיאוקודינג + השלמת כתובות | חינם |
 

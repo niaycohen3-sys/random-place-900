@@ -10,8 +10,9 @@ let lastPickId = null;
 let cached = []; // תוצאות אחרונות לאותו מרכז+קטגוריות, כדי ש"נסה שוב" יהיה מיידי
 
 const map = L.map("map").setView([center.lat, center.lon], 15);
-L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  maxZoom: 19, attribution: "© OpenStreetMap contributors",
+// אריחי מפה: CARTO (מבוסס OSM) — שרתי tile.openstreetmap.org חוסמים הטמעה באפליקציות (403, Tile Usage Policy)
+L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
+  maxZoom: 20, subdomains: "abcd", attribution: "© OpenStreetMap contributors © CARTO",
 }).addTo(map);
 
 const centerMarker = L.marker([center.lat, center.lon], { draggable: true }).addTo(map);
